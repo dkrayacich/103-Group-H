@@ -18,7 +18,7 @@ def main():
                 rover.send_command(left_side_speed, right_side_speed)
 
 
-        if rover.laser_distances[14] < 0.5 and rover.laser_distances[15] < 0.5 and rover.laser_distances[16] < 0.5:
+        if rover.laser_distances[14] < 0.5 and rover.laser_distances[15] < 0.5 and rover.laser_distances[16] < 0.5 and rover.laser_distances[10] < 2:
             while rover.laser_distances[14] < 0.5 and rover.laser_distances[15] < 0.5 and rover.laser_distances[16] < 0.5:
                 left_side_speed = -1
                 right_side_speed = 1
