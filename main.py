@@ -8,22 +8,16 @@ def main():
 
     tooLeft = False
     tooRight = False
-    while not tooLeft or tooRight:
+    while True:
+
+        if rover.laser_distances[18] > 0.5 and rover.laser_distances[19] > 0.5 and rover.laser_distances[20] > 0.5:
+            while rover.laser_distances[18] > 0.5 and rover.laser_distances[19] > 0.5 and rover.laser_distances[20] > 0.5:
+                left_side_speed = 1
+                right_side_speed = -1
 
 
-        counter = 0
-        for dist in rover.laser_distances[16:21]:
-            if dist > 2:
-                counter+= 1
-            if counter >= 3:
-                tooLeft = True
-                break
-
-        counter = 0
-        for dist in rover.laser_distances[13:17]:
-            if dist < 0.3:
-                counter += 1
-            if counter >= 2:
-                tooRight = True
-                break
+        if rover.laser_distances[14] < 0.5 and rover.laser_distances[15] < 0.5 and rover.laser_distances[16] < 0.5:
+            while rover.laser_distances[14] < 0.5 and rover.laser_distances[15] < 0.5 and rover.laser_distances[16] < 0.5:
+                left_side_speed = -1
+                right_side_speed = 1
 
